@@ -156,7 +156,11 @@ function addAppToWorkspaceFile(options: ApplicationOptions, workspace: Workspace
           polyfills: `${projectRoot}src/polyfills.ts`,
           tsConfig: `${rootFilesRoot}tsconfig.app.json`,
           assets: [
-            join(normalize(projectRoot), 'src', 'favicon.ico'),
+            {
+              'glob': '*.ico',
+              'input': join(normalize(projectRoot), 'src'),
+              'output': './',
+            },
             join(normalize(projectRoot), 'src', 'assets'),
           ],
           styles: [
@@ -216,7 +220,11 @@ function addAppToWorkspaceFile(options: ApplicationOptions, workspace: Workspace
           ],
           scripts: [],
           assets: [
-            join(normalize(projectRoot), 'src', 'favicon.ico'),
+            {
+              'glob': '*.ico',
+              'input': join(normalize(projectRoot), 'src'),
+              'output': './',
+            },
             join(normalize(projectRoot), 'src', 'assets'),
           ],
         },
